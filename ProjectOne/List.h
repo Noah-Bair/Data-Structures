@@ -1,5 +1,6 @@
 #ifndef LIST_H
 #define LIST_H
+
 typedef int ElementType;
 const int MAX = 100;
 
@@ -10,7 +11,7 @@ public:
 	void InsertAtEnd(ElementType x);
 	void Delete(ElementType x);
 	void Display();
-	int Sum(); // << Double would be better
+	int Sum();
 	int Average(); // << Double would be better
 
 private:

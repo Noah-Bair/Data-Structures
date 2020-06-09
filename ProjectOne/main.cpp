@@ -21,35 +21,35 @@ int main() {
 
 		switch (ch) {
 		int input;
-		case 1:
-			cout << "Number to be inserted: ";
-			cin >> input;
-			list.InsertAtEnd(input);
-			break;
-		case 2:
-			cout << "Number to be deleted: ";
-			cin >> input;
-			list.Delete(input);
-			break;
-		case 3:
-			cout << "Option 3 selected.\n";
-			list.Display();
-			break;
-		case 4:
-			cout << "Option 4 selected.\n";
-			cout << "Sum = " << list.Sum() << "\n";
-			cout << "\n";
-			break;
-		case 5:
-			cout << "Option 5 selected.\n";
-			cout << "Average = " << list.Average() << "\n";
-			cout << "\n";
-			break;
-		case 6:
-			cout << "Option 6 selected.\nProgram Terminated!\n";
-			exit(0);
-		default:
-			cout << "Invalid Choice! Please select an input between 1-6.\n\n";
+	case 1:
+		cout << "Number to be inserted: ";
+		cin >> input;
+		list.InsertAtEnd(input);
+		break;
+	case 2:
+		cout << "Number to be deleted: ";
+		cin >> input;
+		list.Delete(input);
+		break;
+	case 3:
+		cout << "Option 3 selected.\n";
+		list.Display();
+		break;
+	case 4:
+		cout << "Option 4 selected.\n";
+		cout << "Sum = " << list.Sum() << "\n";
+		cout << "\n";
+		break;
+	case 5:
+		cout << "Option 5 selected.\n";
+		cout << "Average = " << list.Average() << "\n";
+		cout << "\n";
+		break;
+	case 6:
+		cout << "Option 6 selected.\nProgram Terminated!\n";
+		exit(0);
+	default:
+		cout << "Invalid Choice! Please select an input between 1-6.\n\n";
 		}
 	}
 }
