@@ -1,3 +1,6 @@
+#ifndef LIST_H
+#define LIST_H
+
 typedef int ElementType;
 
 struct node {
@@ -18,3 +21,5 @@ public:
 private:
 	node *first;
 };
+
+#endif

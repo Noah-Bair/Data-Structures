@@ -94,6 +94,6 @@ int List::Average() {
 		sum += ptr->data;
 		++count;
 	}
-	return Sum() / count;
+	return Sum() / count; // << Error: Doesn't work if only one value in the list
 }
 
