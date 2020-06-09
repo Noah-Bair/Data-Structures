@@ -3,10 +3,7 @@ using namespace std;
 
 // Create an empty Queue
 Queue::Queue() {
-	myfront = new qnode();
-	myfront->data = NULL;
-	myfront->next = NULL;
-	myback = myfront;
+	myfront = myback = NULL;
 }
 
 // Return true if Queue is empty, otherwise return false
@@ -20,18 +17,10 @@ bool Queue::empty() {
 
 // Add a new value to the back of the Queue
 void Queue::AddQ(QueueElement x) {
-	if (empty()) { // << Assign value to front when empty
-		myfront->data = x;
-		myfront->next = myback;
-	}
-
-	if (myback->data == NULL) { // << Assign data to back of list if empty
-		myback->data = x;
+	if (empty()) {
+		// Only one node 
 	} else {
-		qnode *Queue = new qnode();
-		Queue->data = x;
-		myback->next = Queue;
-		myback = Queue;
+		// More than one node
 	}
 }
 
@@ -42,22 +31,20 @@ bool Queue::Front(QueueElement &x) {
 
 // Remove the value at the front of the Queue
 void Queue::RemoveQ() {
-	if (myfront->next = NULL) { // << Save off pointer to first node in this case
-		myfront->data = NULL;
-		myback = myfront;
-	} else {
-		qnode *del = myfront;
-		myfront = myfront->next;
-		delete del;
-
-	}
+	// TODO
 }
 
 // Displays the data stored in the Queue from front to back
 void Queue::display() {
 	if (empty()) {
-		cout << "No data is in the list!";
-	} else {
-		// TODO: Display queue contents
+		cout << "The list is empty!";
+		return;
 	}
+
+	Node *front = myfront;
+	while (front) {
+		cout << front->data << " ";
+		front = front->next;
+	}
+	cout << endl;
 }
