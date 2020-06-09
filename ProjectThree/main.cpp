@@ -15,34 +15,26 @@ int main() {
 	}
 
 	//Display the content of the stack and queue to the screen
-	cout << ”Content
-	of Stack
-	”<<endl;
+	cout << ”Content of Stack ” << endl;
 	S.display();
 	cout << endl << endl;
-	cout << ”Content
-	of Queue
-	”<<endl;
+	cout << ”Content of Queue ” << endl;
 	Q.display();
 	cout << endl << endl;
 
 	//Remove and display each value on the stack
-	cout << ”Removing
-	values from
-	Stack ” <<endl;
+	cout << ”Removing values from Stack” << endl;
 	while (!S.empty()) {
 		int x;
 		S.Top(x);
 		cout << endl;
-		cout<<”Popping --- “ <<x<<endl;
+		cout << ”Popping --- “ << x << endl;
 		S.pop();
 		S.display();
 	}
 
 	if (S.empty())
-	cout << “Stack
-	is empty
-	.”<<endl;
+	cout << “Stack is empty.” << endl;
 
 //Remove and display each values on the Queue
 	cout << ”Removing
@@ -52,13 +44,11 @@ int main() {
 		int x;
 		Q.Front(x);
 		cout << endl;
-		cout<<”Removing --- “ <<x<<endl;
+		cout << ”Removing --- “ << x << endl;
 		Q.RemoveQ();
 		Q.display();
 	}
 
 	if (Q.empty())
-	cout << “Queue
-	is empty
-.”<<endl;
+	cout << “Queue is empty.” << endl;
 }
