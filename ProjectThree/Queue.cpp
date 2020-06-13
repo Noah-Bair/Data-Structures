@@ -18,9 +18,13 @@ bool Queue::empty() {
 // Add a new value to the back of the Queue
 void Queue::AddQ(QueueElement x) {
 	if (empty()) {
-		// Only one node 
+		myfront->data = x;
+		myfront->next = myback;
 	} else {
-		// More than one node
+		qnode *newNode = new qnode;
+		newNode->data = x;
+		myback->next = newNode;
+		myback = newNode;
 	}
 }
 
@@ -30,8 +34,10 @@ bool Queue::Front(QueueElement &x) {
 }
 
 // Remove the value at the front of the Queue
-void Queue::RemoveQ() {
-	// TODO
+void Queue::RemoveQ() { // << TODO: Needs work!
+	qnode *rmv = myfront;
+	myfront = myfront->next;
+	delete rmv;
 }
 
 // Displays the data stored in the Queue from front to back
@@ -39,12 +45,12 @@ void Queue::display() {
 	if (empty()) {
 		cout << "The list is empty!";
 		return;
+	} else {
+		qnode *node = new qnode;
+		node = myfront;
+		while (node != myback) {
+			node = node->next;
+			cout << node->data << endl;
+		}
 	}
-
-	Node *front = myfront;
-	while (front) {
-		cout << front->data << " ";
-		front = front->next;
-	}
-	cout << endl;
 }

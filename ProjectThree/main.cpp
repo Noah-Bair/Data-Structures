@@ -7,23 +7,24 @@ int main() {
 	Stack S;
 	Queue Q;
 
-	// insert values 10, 20, 30, 40 and 50 onto the stack
+	// Insert values 10, 20, 30, 40 and 50 onto the stack
 	for (int x = 1; x <= 5; x++) {
 		int n = x * 10;
 		S.push(n);
 		Q.Addq(n);
 	}
 
-	//Display the content of the stack and queue to the screen
-	  cout << ”Content of Stack” << endl;
-	  S.display();
-	  cout << endl << endl;
-	  cout << ”Content of Queue” << endl;
-	  Q.display();  	
-	  cout << endl << endl;
+	// Display the content of the stack and queue to the screen
+	cout << ”Content of Stack” << endl;
+	S.display();
+	cout << endl << endl;
+	cout << ”Content of Queue” << endl;
+	Q.display();  	
+	cout << endl << endl;
 
-	//Remove and display each value on the stack
-	cout<<”Removing values from Stack” <<endl;	
+	  // Remove and display each value on the stack
+	  cout<<”Removing values from Stack” <<endl;
+	  
 	while (!S.empty()) {
 		int x;
 		S.Top(x);
@@ -36,8 +37,9 @@ int main() {
 	if (S.empty())
 		cout<< “Stack is empty.”<<endl;   
 	
-	//Remove and display each values on the Queue
-	cout << ”Removing values from Queue” << endl;     	
+	// Remove and display each values on the Queue
+	cout << ”Removing values from Queue” << endl;
+	
 	while (!Q.empty()) {
 		int x;
 		Q.Front(x);
