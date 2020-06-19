@@ -1,9 +1,13 @@
 #include "Queue.h"
+#include <iostream>
 using namespace std;
 
 // Create an empty Queue
 Queue::Queue() {
-	myfront = myback = NULL;
+	myfront = new qnode();
+	myfront->data = NULL;
+	myfront->next = NULL;
+	myback = myfront;
 }
 
 // Return true if Queue is empty, otherwise return false
@@ -20,11 +24,13 @@ void Queue::AddQ(QueueElement x) {
 	if (empty()) {
 		myfront->data = x;
 		myfront->next = myback;
+	} else if (myback->data == NULL) {
+		myback->data = x;
 	} else {
-		qnode *newNode = new qnode;
-		newNode->data = x;
-		myback->next = newNode;
-		myback = newNode;
+		struct qnode *ptr = new qnode();
+		ptr->data = x;
+		myback->next = ptr;
+		myback = ptr;
 	}
 }
 
@@ -34,23 +40,24 @@ bool Queue::Front(QueueElement &x) {
 }
 
 // Remove the value at the front of the Queue
-void Queue::RemoveQ() { // << TODO: Needs work!
-	qnode *rmv = myfront;
-	myfront = myfront->next;
-	delete rmv;
+void Queue::RemoveQ() {
+	if (myfront->next == NULL) {
+		myfront->data = NULL;
+		myback = myfront;
+	} else {
+		struct qnode *ptr = myfront;
+		myfront = myfront->next;
+		delete ptr;
+	}
 }
 
 // Displays the data stored in the Queue from front to back
 void Queue::display() {
-	if (empty()) {
-		cout << "The list is empty!";
-		return;
-	} else {
-		qnode *node = new qnode;
-		node = myfront;
-		while (node != myback) {
-			node = node->next;
-			cout << node->data << endl;
-		}
+	struct qnode *ptr = myfront;
+
+	cout << ptr->data << " ";
+	while (ptr != myback) {
+		ptr = ptr->next;
+		cout << ptr->data << " ";
 	}
 }
