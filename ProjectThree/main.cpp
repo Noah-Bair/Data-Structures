@@ -27,26 +27,26 @@ int main() {
 	while (!S.empty()) {
 		int x;
 		S.Top(x);
-		cout << endl;
-		cout << "Popping: " << x << endl; // << TODO: 'x' variable is not top
+		cout << endl << endl;
+		cout << "Popping: " << x << endl;
 		S.pop();
 		S.display();
 	}
 
 	if (S.empty())
-		cout << "Stack is empty." << endl;
+		cout << "Stack is empty.\n" << endl;
 
 	// Remove and display each values on the Queue
 	cout << "Removing values from Queue:" << endl;
 	while (!Q.empty()) {
 		int x;
 		Q.Front(x);
-		cout << endl;
-		cout << "Removing: " << x << endl; // << TODO: 'x' variable is not top
+		cout << endl << endl;
+		cout << "Removing: " << x << endl;
 		Q.RemoveQ();
 		Q.display();
 	}
 
 	if (Q.empty())
-		cout << "Queue is empty." << endl;
+		cout << "Queue is empty.\n" << endl;
 }

@@ -33,10 +33,11 @@ void Stack::push(StackElement x) {
 
 // Retrieves the data that is at the top of the stack
 bool Stack::Top(StackElement &x) {
+	x = mytop->data;
 	return mytop->data;
 }
 
-//removes the value at the top of the stack
+// Removes the value at the top of the stack
 void Stack::pop() {
 	if (mytop->next == NULL) {
 		mytop->data = NULL;
@@ -46,10 +47,14 @@ void Stack::pop() {
 		delete ptr;
 	}
 }
-//displays the data stored in the stack
+
+// Displays the data stored in the stack
 void Stack::display() {
 	struct node *ptr = mytop;
 
+	if (empty()) {
+		return;
+	}
 	cout << ptr->data << " ";
 	while (ptr->next != NULL) {
 		ptr = ptr->next;

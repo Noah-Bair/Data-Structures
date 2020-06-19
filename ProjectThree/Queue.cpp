@@ -36,6 +36,7 @@ void Queue::AddQ(QueueElement x) {
 
 // Retrieve the data at the front of the Queue
 bool Queue::Front(QueueElement &x) {
+	x = myfront->data;
 	return myfront->data;
 }
 
@@ -55,6 +56,9 @@ void Queue::RemoveQ() {
 void Queue::display() {
 	struct qnode *ptr = myfront;
 
+	if (empty()) {
+		return;
+	}
 	cout << ptr->data << " ";
 	while (ptr != myback) {
 		ptr = ptr->next;
