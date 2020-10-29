@@ -2,7 +2,6 @@
 #include "Binary_Search.h"
 
 int main() {
-
 	BinarySearchTree order;
 
 	order.Insert(4);
@@ -21,4 +20,7 @@ int main() {
 	order.Insert(5);
 
 	order.Display();
+	//cout << order.IsThere(5) << endl;
+	//cout << order.IsThere(0) << endl;
+	//cout << order.IsThere(6) << endl;
 }
